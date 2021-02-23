@@ -3,6 +3,7 @@
 ### scripts
 
     to run backend: npm run server
+    to run frontend: npm run client
 
 #### routes
 
