@@ -84,7 +84,7 @@ export default class PostWish extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className='container'>
+        <div className='container' style={{backgroundImage: "url(/tree.png)"}}>
           <div className='row mt-5'>
             <div className='col'>
               <ShowWishes allWishes={this.state.allWishes} />
