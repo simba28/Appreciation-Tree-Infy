@@ -20,7 +20,7 @@ export default class ShowWishes extends Component {
       <React.Fragment>
         <div className='row'>
           {this.state.allWishes.map(wishObj => (
-            <div key={wishObj._id} className='col-sm-3'>
+            <div key={wishObj._id} className='col-xxl-6'>
               <div className='card m-2'>
                 <div className='card-body'>
                   <h5 className='card-title'>{wishObj.wish}</h5>

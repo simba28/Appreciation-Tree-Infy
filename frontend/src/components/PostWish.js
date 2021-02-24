@@ -71,6 +71,7 @@ export default class PostWish extends Component {
   handleChange = event => {
     let name = event.target.name;
     let value = event.target.value;
+    this.validator.showMessageFor(event.target.name);
 
     this.setState({
       form: {
@@ -85,14 +86,17 @@ export default class PostWish extends Component {
       <React.Fragment>
         <div className='container'>
           <div className='row mt-5'>
-            <div className='col-lg-4 offset-lg-1'>
+            <div className='col'>
+              <ShowWishes allWishes={this.state.allWishes} />
+            </div>
+            <div className='col-4'>
               <div className='card bg-card'>
                 <div className='card-body'>
                   {/* Create the form here */}
                   <form onSubmit={this.handleSubmit}>
                     {/* Username */}
                     <div className='form-group'>
-                      <label htmlFor='username'>Username</label>
+                      <label htmlFor='username'>Employee Name <span style={{color:'red'}}>*</span></label>
                       <center>
                         <input
                           className='form-control'
@@ -113,7 +117,7 @@ export default class PostWish extends Component {
 
                     {/* Employee ID */}
                     <div className='form-group'>
-                      <label htmlFor='empId'>Employee ID</label>
+                      <label htmlFor='empId'>Employee ID <span style={{color:'red'}}>*</span></label>
                       <center>
                         <input
                           className='form-control'
@@ -134,22 +138,21 @@ export default class PostWish extends Component {
 
                     {/* Wish */}
                     <div className='form-group'>
-                      <label htmlFor='wish'>Wish</label>
+                      <label htmlFor='wish'>Wish <span style={{color:'red'}}>*</span></label>
                       <center>
-                        <input
-                          type='wish'
-                          className='form-control'
-                          id='wish'
-                          name='wish'
-                          placeholder="Happy Women's day"
-                          onChange={this.handleChange}
-                        />
+                        <textarea
+                        className='form-control'
+                        id='wish'
+                        name='wish'
+                        placeholder="Happy Women's day"
+                        rows='5'
+                        onChange={this.handleChange}/>
                       </center>
                       <span name='wishError' className='text-danger'>
                         {this.validator.message(
                           'wish',
                           this.state.form.wish,
-                          'required'
+                          'required|max:100'
                         )}
                       </span>
                     </div>
@@ -171,7 +174,6 @@ export default class PostWish extends Component {
               </div>
             </div>
           </div>
-          <ShowWishes allWishes={this.state.allWishes} />
         </div>
       </React.Fragment>
     );
