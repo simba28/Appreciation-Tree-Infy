@@ -21,8 +21,10 @@ export default class ShowWishes extends Component {
         <div className='row'>
           {this.state.allWishes.map(wishObj => (
             <div key={wishObj._id} className='col-xxl-6'>
-              <div className='card m-2'>
-                <div className='card-body'>
+              <div className='card m-2' style={{background:'rgba(117, 139, 85, 0.6)'}} >
+              {/* <img class="card-img" src="leaf.jpg" alt="Card image" style={{width:"100%"}}/> */}
+                {/* <div className='card-img-overlay'>  */}
+                <div className='card-body'> 
                   <h5 className='card-title'>{wishObj.wish}</h5>
                   <div className='card-subtitle'>
                     <span>{wishObj.username}</span> <span>{wishObj.empId}</span>
