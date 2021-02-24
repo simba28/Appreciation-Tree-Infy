@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.11.17",
     "simple-react-validator": "^1.6.0",
-    "express-validator": "^6.9.2",
+    "express-validator": "^6.9.2"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",

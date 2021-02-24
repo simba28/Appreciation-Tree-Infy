@@ -9,7 +9,7 @@ const Post = require('../models/Post');
 router.post(
   '/',
   [
-    check('name', 'Name is required').not().isEmpty(),
+    check('username', 'Username is required').not().isEmpty(),
     check('empId', 'Employee Id is required').not().isEmpty(),
     check('wish', 'wish is required').not().isEmpty(),
   ],
@@ -20,10 +20,10 @@ router.post(
     }
 
     try {
-      const { name, empId, wish } = req.body;
+      const { username, empId, wish } = req.body;
 
       const newPost = new Post({
-        name,
+        username,
         empId,
         wish,
       });
