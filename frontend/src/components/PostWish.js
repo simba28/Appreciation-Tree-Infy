@@ -84,92 +84,106 @@ export default class PostWish extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className='container' style={{backgroundImage: "url(/tree.png)"}}>
-          <div className='row mt-5'>
-            <div className='col'>
-              <ShowWishes allWishes={this.state.allWishes} />
-            </div>
-            <div className='col-4'>
-              <div className='card bg-card'>
-                <div className='card-body'>
-                  {/* Create the form here */}
-                  <form onSubmit={this.handleSubmit}>
-                    {/* Username */}
-                    <div className='form-group'>
-                      <label htmlFor='username'>Employee Name <span style={{color:'red'}}>*</span></label>
-                      <center>
-                        <input
-                          className='form-control'
-                          id='username'
-                          name='username'
-                          placeholder='Username'
-                          onChange={this.handleChange}
-                        />
-                      </center>
-                      <span name='usernameError' className='text-danger'>
-                        {this.validator.message(
-                          'username',
-                          this.state.form.username,
-                          'required|alpha_space'
-                        )}
-                      </span>
-                    </div>
+        <div
+          style={{
+            background: 'url(/tree.png) no-repeat fixed center',
+            backgroundSize: 'cover',
+          }}
+        >
+          <div className='container'>
+            <div className='row mt-5'>
+              <div className='col'>
+                <ShowWishes allWishes={this.state.allWishes} />
+              </div>
+              <div className='col-4'>
+                <div className='card bg-card'>
+                  <div className='card-body'>
+                    {/* Create the form here */}
+                    <form onSubmit={this.handleSubmit}>
+                      {/* Username */}
+                      <div className='form-group'>
+                        <label htmlFor='username'>
+                          Employee Name <span style={{ color: 'red' }}>*</span>
+                        </label>
+                        <center>
+                          <input
+                            className='form-control'
+                            id='username'
+                            name='username'
+                            placeholder='Username'
+                            onChange={this.handleChange}
+                          />
+                        </center>
+                        <span name='usernameError' className='text-danger'>
+                          {this.validator.message(
+                            'username',
+                            this.state.form.username,
+                            'required|alpha_space'
+                          )}
+                        </span>
+                      </div>
 
-                    {/* Employee ID */}
-                    <div className='form-group'>
-                      <label htmlFor='empId'>Employee ID <span style={{color:'red'}}>*</span></label>
-                      <center>
-                        <input
-                          className='form-control'
-                          id='empId'
-                          name='empId'
-                          placeholder='6 digit Employee Id'
-                          onChange={this.handleChange}
-                        />
-                      </center>
-                      <span name='empIdError' className='text-danger'>
-                        {this.validator.message(
-                          'empId',
-                          this.state.form.empId,
-                          'required|numeric|size:6'
-                        )}
-                      </span>
-                    </div>
+                      {/* Employee ID */}
+                      <div className='form-group'>
+                        <label htmlFor='empId'>
+                          Employee ID <span style={{ color: 'red' }}>*</span>
+                        </label>
+                        <center>
+                          <input
+                            className='form-control'
+                            id='empId'
+                            name='empId'
+                            placeholder='6 digit Employee Id'
+                            onChange={this.handleChange}
+                          />
+                        </center>
+                        <span name='empIdError' className='text-danger'>
+                          {this.validator.message(
+                            'empId',
+                            this.state.form.empId,
+                            'required|numeric|size:6'
+                          )}
+                        </span>
+                      </div>
 
-                    {/* Wish */}
-                    <div className='form-group'>
-                      <label htmlFor='wish'>Wish <span style={{color:'red'}}>*</span></label>
-                      <center>
-                        <textarea
-                        className='form-control'
-                        id='wish'
-                        name='wish'
-                        placeholder="Happy Women's day"
-                        rows='5'
-                        onChange={this.handleChange}/>
-                      </center>
-                      <span name='wishError' className='text-danger'>
-                        {this.validator.message(
-                          'wish',
-                          this.state.form.wish,
-                          'required|max:100'
-                        )}
-                      </span>
-                    </div>
+                      {/* Wish */}
+                      <div className='form-group'>
+                        <label htmlFor='wish'>
+                          Wish <span style={{ color: 'red' }}>*</span>
+                        </label>
+                        <center>
+                          <textarea
+                            className='form-control'
+                            id='wish'
+                            name='wish'
+                            placeholder="Happy Women's day"
+                            rows='5'
+                            onChange={this.handleChange}
+                          />
+                        </center>
+                        <span name='wishError' className='text-danger'>
+                          {this.validator.message(
+                            'wish',
+                            this.state.form.wish,
+                            'required|max:100'
+                          )}
+                        </span>
+                      </div>
 
-                    {/* Button */}
-                    <button
-                      type='submit'
-                      className='btn btn-primary btn-block'
-                      name='postWish'
-                      disabled={!this.validator.allValid()}
-                    >
-                      Post Wish
-                    </button>
-                  </form>
-                  <span name='errorMessage' className='text-danger'>
-                    {this.state.errorMessage}
-                  </span>
+                      {/* Button */}
+                      <button
+                        type='submit'
+                        className='btn btn-primary btn-block'
+                        name='postWish'
+                        disabled={!this.validator.allValid()}
+                      >
+                        Post Wish
+                      </button>
+                    </form>
+                    <span name='errorMessage' className='text-danger'>
+                      {this.state.errorMessage}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
