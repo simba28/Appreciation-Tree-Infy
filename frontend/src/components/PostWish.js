@@ -3,7 +3,6 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SimpleReactValidator from 'simple-react-validator';
 import ShowWishes from './ShowWishes';
-const url = 'http://localhost:5000';
 
 export default class PostWish extends Component {
   constructor(props) {
@@ -20,9 +19,9 @@ export default class PostWish extends Component {
     this.validator = new SimpleReactValidator({ autoForceUpdate: this });
   }
 
-  getAllWishes(url) {
+  getAllWishes() {
     axios
-      .get(url)
+      .get('/posts')
       .then(response => {
         console.log(response.data);
         this.setState({ allWishes: response.data });
@@ -36,17 +35,17 @@ export default class PostWish extends Component {
   }
 
   componentDidMount() {
-    this.getAllWishes(url + '/posts');
+    this.getAllWishes();
   }
 
   submitPost = () => {
     this.setState({ errorMessage: '' });
     console.log(this.state.form);
     axios
-      .post(url + '/posts', this.state.form)
+      .post('/posts', this.state.form)
       .then(response => {
         console.log(response.data, 'success');
-        this.getAllWishes(url + '/posts');
+        this.getAllWishes();
       })
       .catch(err => {
         let error = err.response
