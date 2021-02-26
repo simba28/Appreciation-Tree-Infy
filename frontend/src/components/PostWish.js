@@ -83,12 +83,7 @@ export default class PostWish extends Component {
   render() {
     return (
       <React.Fragment>
-        <div
-          style={{
-            background: 'url(/tree.png) no-repeat fixed center',
-            backgroundSize: 'cover',
-          }}
-        >
+        <div className='main'>
           <div className='container'>
             <div className='row mt-5'>
               <div className='col'>
