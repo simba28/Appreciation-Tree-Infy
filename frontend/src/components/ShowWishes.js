@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import LazyLoad from 'react-lazyload';
 export default class ShowWishes extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +20,7 @@ export default class ShowWishes extends Component {
       <React.Fragment>
         <div className='row'>
           {this.state.allWishes.map(wishObj => (
+            <LazyLoad key={wishObj._id} placeholder="<h5>Loading</h5>">
             <div key={wishObj._id} className='col-xxl-6'>
               <div
                 className='card m-2'
@@ -41,6 +42,7 @@ export default class ShowWishes extends Component {
                 {/* </div> */}
               </div>
             </div>
+            </LazyLoad>
           ))}
         </div>
       </React.Fragment>
