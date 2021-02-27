@@ -159,7 +159,7 @@ export default class PostWish extends Component {
                           {this.validator.message(
                             'wish',
                             this.state.form.wish,
-                            'required|max:100'
+                            'required|max:75'
                           )}
                         </span>
                       </div>

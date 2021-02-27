@@ -12,6 +12,9 @@
 
 img {
   display: inline-table;
+  object-fit: fill;
+  width: 400px;
+  height: 300px;
 }
 .star-image {
   /* background-image: require('./assets/tree.png'); */
@@ -19,6 +22,9 @@ img {
   text-align: center;
   color: white;
   display: inline-flex;
+  resize: both;
+  /* overflow:hidden; */
+  /* height: 100%; */
   /* width: fit-content; */
   /* width: 100%;
   padding: 10%; */
@@ -33,9 +39,11 @@ img {
   /* word-wrap: break-word; */
   position: absolute;
   /* margin-left: 5%; */
-  margin-right: 5%;
+  margin: auto;
+  /* margin-right: 5%; */
   top: 50%;
   left: 50%;
   color: black;
   transform: translate(-50%, -50%);
+  word-break:normal;
 }
