@@ -20,27 +20,44 @@ export default class ShowWishes extends Component {
       <React.Fragment>
         <div className='row'>
           {this.state.allWishes.map(wishObj => (
-            <div key={wishObj._id} className='col-xxl-6'>
-              <div
-                className='card m-2'
-                style={{ background: 'rgba(117, 139, 85, 0.6)' }}
-              >
-                {/* <img
-                  className='card-img'
-                  src='leaf.jpg'
-                  alt='Card image'
-                  // style={{ width: '100%' }}
-                /> */}
-                {/* <div className='card-img-overlay'> */}
-                <div className='card-body'>
-                  <h5 className='card-title'>{wishObj.wish}</h5>
-                  <div className='card-subtitle'>
-                    <span>{wishObj.username}</span> <span>{wishObj.empId}</span>
-                  </div>
+            <div className='col' key={wishObj._id}>
+              <div className='star-image'>
+                <img src='star.png' alt='' />
+                <div className='centered'>
+                  <h4>
+                    {wishObj.wish}
+                    {/* {wishObj.wish.split(' ').map(word => (
+                      <span>
+                        {word}
+                        <br />
+                      </span>
+                    ))} */}
+                  </h4>
                 </div>
-                {/* </div> */}
               </div>
             </div>
+
+            // <div key={wishObj._id} className='col-xxl-6'>
+            //   <div
+            //     className='card m-2'
+            //     style={{ background: 'rgba(117, 139, 85, 0.6)' }}
+            //   >
+            //     {/* <img
+            //       className='card-img'
+            //       src='leaf.jpg'
+            //       alt='Card image'
+            //       // style={{ width: '100%' }}
+            //     /> */}
+            //     {/* <div className='card-img-overlay'> */}
+            //     <div className='card-body'>
+            //       <h5 className='card-title'>{wishObj.wish}</h5>
+            //       <div className='card-subtitle'>
+            //         <span>{wishObj.username}</span> <span>{wishObj.empId}</span>
+            //       </div>
+            //     </div>
+            //     {/* </div> */}
+            //   </div>
+            // </div>
           ))}
         </div>
       </React.Fragment>

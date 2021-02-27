@@ -9,3 +9,28 @@
   background-attachment: fixed;
   background-size: cover;
 }
+
+.star-image {
+  /* background-image: require('./assets/tree.png'); */
+  position: relative;
+  text-align: center;
+  color: white;
+  /* width: 100%;
+  padding: 10%; */
+}
+
+/* .star-image img {
+  min-height: 100px;
+  min-width: 100px;
+} */
+
+.centered {
+  /* word-wrap: break-word; */
+  position: absolute;
+  /* margin-left: 5%; */
+  margin-right: 5%;
+  top: 50%;
+  left: 50%;
+  color: black;
+  transform: translate(-50%, -50%);
+}
