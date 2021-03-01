@@ -61,7 +61,6 @@ export default class PostWish extends Component {
     axios
       .post('/posts', this.state.form)
       .then(response => {
-        console.log(response.data, 'success');
         this.getAllWishes();
       })
       .catch(err => {
@@ -101,13 +100,10 @@ export default class PostWish extends Component {
     return (
       <React.Fragment>
         <div className='main'>
-          <div className='container'>
-            {/* <div className='row mt-5'> */}
-
-            {/* <div className='col-4'> */}
+          <div className='container-fluid mlr-5s'>
             <div className='d-flex justify-content-center'>
-              <div className='card bg-card my-2'   style={{width:'100%'}}>
-                <div className='card-body'>
+              <div className='card bg-card bg-transparent my-2'   style={{width:'80%'}}>
+                <div className='card-body' style={{paddingBottom: '0px'}}>
                   {/* Create the form here */}
                   <form className='form-inline' onSubmit={this.handleSubmit}>
                     {/* Username */}
@@ -155,7 +151,7 @@ export default class PostWish extends Component {
                       <center>
                         <textarea
                           className='form-control ml-1'
-                          style={{width:'35vw'}}
+                          style={{width:'37vw'}}
                           id='wish'
                           name='wish'
                           placeholder='Drop in your Wish'

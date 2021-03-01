@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import PostWish from './components/PostWish';
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
         <img
           src='navbar.jpg'
           className='sticky'
-          style={{ width: '100vw', height: '80px' }}
+          style={{ width: '100%', height: '80px' }}
           alt=''
         />
       </div>

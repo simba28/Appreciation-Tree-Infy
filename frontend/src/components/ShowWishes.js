@@ -18,10 +18,10 @@ export default class ShowWishes extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className='row'>
+        <div className="ml-5 ">
           {this.state.allWishes.map(wishObj => (
-            <div className='col' key={wishObj._id}>
-              <div className='star-image'>
+            // <div className='col' key={wishObj._id}>
+              <div className='star-image' key={wishObj.id}>
                 {wishObj.wish.length > 50 ? (
                   <img
                     src='star.png'
@@ -39,10 +39,10 @@ export default class ShowWishes extends Component {
                 )}
                 {/* <img src='star.png' alt='' /> */}
                 <div className='centered'>
-                  <h4>{wishObj.wish}</h4>
+                  <h4>{wishObj.wish} <br/> --{wishObj.username}</h4>
                 </div>
               </div>
-            </div>
+            // </div>
 
             // <div key={wishObj._id} className='col-xxl-6'>
             //   <div

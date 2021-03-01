@@ -23,6 +23,9 @@ img {
   color: white;
   display: inline-flex;
   resize: both;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Pacifico', cursive;
   /* overflow:hidden; */
   /* height: 100%; */
   /* width: fit-content; */
@@ -30,10 +33,9 @@ img {
   padding: 10%; */
 }
 
-/* .star-image img {
-  min-height: 100px;
-  min-width: 100px;
-} */
+.star-image img {
+  opacity: .7;
+}
 
 .centered {
   /* word-wrap: break-word; */
@@ -41,7 +43,7 @@ img {
   /* margin-left: 5%; */
   margin: auto;
   /* margin-right: 5%; */
-  top: 50%;
+  top: 55%;
   left: 50%;
   color: black;
   transform: translate(-50%, -50%);
