@@ -16,7 +16,19 @@ export default class PostWish extends Component {
       },
       errorMessage: '',
     };
-    this.validator = new SimpleReactValidator({ autoForceUpdate: this });
+    this.validator = new SimpleReactValidator({ 
+      autoForceUpdate: this,
+      validators: {
+        uname: {  // name the rule
+          message: 'Not valid Infosys username',
+          rule: (val, params, validator) => {
+            return validator.helpers.testRegex(val,/^[A-z0-9._]+$/i) && params.indexOf(val) === -1
+          },
+          messageReplace: (message, params) => message.replace(':values', this.helpers.toSentence(params)),  // optional
+          required: true  // optional
+        }
+      }
+    });
   }
 
   getAllWishes() {
@@ -104,7 +116,7 @@ export default class PostWish extends Component {
                             className='form-control'
                             id='username'
                             name='username'
-                            placeholder='Username'
+                            placeholder='Infosys Username'
                             onChange={this.handleChange}
                           />
                         </center>
@@ -112,7 +124,7 @@ export default class PostWish extends Component {
                           {this.validator.message(
                             'username',
                             this.state.form.username,
-                            'required|alpha_space'
+                            'required|uname|max:20'
                           )}
                         </span>
                       </div>
@@ -150,7 +162,7 @@ export default class PostWish extends Component {
                             className='form-control'
                             id='wish'
                             name='wish'
-                            placeholder="Happy Women's day"
+                            placeholder="Drop in your Wish"
                             rows='5'
                             onChange={this.handleChange}
                           />
