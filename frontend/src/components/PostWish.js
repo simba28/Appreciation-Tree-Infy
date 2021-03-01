@@ -101,14 +101,6 @@ export default class PostWish extends Component {
     return (
       <React.Fragment>
         <div className='main'>
-          {/* <div className='alignfull'>
-            <img
-              src='navbar.jpg'
-              className='img-fluid'
-              // style={{ height: '90px' }}
-              alt=''
-            />
-          </div> */}
           <div className='container'>
             {/* <div className='row mt-5'> */}
 
