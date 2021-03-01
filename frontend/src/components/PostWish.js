@@ -120,9 +120,9 @@ export default class PostWish extends Component {
                   <form className='form-inline' onSubmit={this.handleSubmit}>
                     {/* Username */}
                     <div className='form-group'>
-                      <label htmlFor='username'>
+                      {/* <label htmlFor='username'>
                         Employee Name <span style={{ color: 'red' }}>*</span>
-                      </label>
+                      </label> */}
                       <center>
                         <input
                           className='form-control ml-1'
@@ -159,9 +159,6 @@ export default class PostWish extends Component {
 
                     {/* Wish */}
                     <div className='form-group mx-1'>
-                      <label htmlFor='wish'>
-                        Wish <span style={{ color: 'red' }}>*</span>
-                      </label>
                       <center>
                         <textarea
                           className='form-control ml-1'
@@ -196,7 +193,7 @@ export default class PostWish extends Component {
                   </span>
                 </div>
                 <div className='d-flex'>
-                  <p
+                  <div
                     name='usernameError'
                     className='ml-4 alignleft text-danger'
                   >
@@ -205,7 +202,7 @@ export default class PostWish extends Component {
                       this.state.form.username,
                       'required|uname|max:20'
                     )}
-                  </p>
+                  </div>
                   {/* <p name='empIdError' className='aligncenter text-danger'>
                     {this.validator.message(
                       'empId',
@@ -213,13 +210,13 @@ export default class PostWish extends Component {
                       'required|numeric|size:6'
                     )}
                   </p> */}
-                  <p name='wishError' className='mr-5 alignright text-danger'>
+                  <div name='wishError' className='mr-5 alignright text-danger'>
                     {this.validator.message(
                       'wish',
                       this.state.form.wish,
                       'required|max:75'
                     )}
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
