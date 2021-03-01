@@ -20,12 +20,12 @@ img {
   /* background-image: require('./assets/tree.png'); */
   position: relative;
   text-align: center;
-  color: white;
   display: inline-flex;
   resize: both;
   padding-left: 20px;
   padding-right: 20px;
   font-family: 'Pacifico', cursive;
+  color: #ffa500;
   /* overflow:hidden; */
   /* height: 100%; */
   /* width: fit-content; */
