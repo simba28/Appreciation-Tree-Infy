@@ -8,7 +8,7 @@ const PostSchema = new Schema({
   },
   empId: {
     type: Number,
-    required: true,
+    // required: true,
   },
   wish: {
     type: String,

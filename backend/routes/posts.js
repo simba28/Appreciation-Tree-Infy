@@ -10,7 +10,7 @@ router.post(
   '/',
   [
     check('username', 'Username is required').not().isEmpty(),
-    check('empId', 'Employee Id is required').not().isEmpty(),
+    // check('empId', 'Employee Id is required').not().isEmpty(),
     check('wish', 'wish is required').not().isEmpty(),
   ],
   async (req, res) => {

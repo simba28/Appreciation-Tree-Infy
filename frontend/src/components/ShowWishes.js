@@ -22,12 +22,24 @@ export default class ShowWishes extends Component {
           {this.state.allWishes.map(wishObj => (
             <div className='col' key={wishObj._id}>
               <div className='star-image'>
-                {wishObj.wish.length > 50 ? <img src='star.png' style={{width: '600px', height: '500px'}} alt='star' /> : wishObj.wish.length >30? <img src='star.png' style={{width: '500px', height:'400px'}} alt='atar' />: <img src='star.png' alt='star' />}
+                {wishObj.wish.length > 50 ? (
+                  <img
+                    src='star.png'
+                    style={{ width: '600px', height: '500px' }}
+                    alt='star'
+                  />
+                ) : wishObj.wish.length > 30 ? (
+                  <img
+                    src='star.png'
+                    style={{ width: '500px', height: '400px' }}
+                    alt='atar'
+                  />
+                ) : (
+                  <img src='star.png' alt='star' />
+                )}
                 {/* <img src='star.png' alt='' /> */}
                 <div className='centered'>
-                  <h4>
-                    {wishObj.wish}
-                  </h4>
+                  <h4>{wishObj.wish}</h4>
                 </div>
               </div>
             </div>
