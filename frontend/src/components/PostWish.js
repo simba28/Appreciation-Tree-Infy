@@ -114,7 +114,7 @@ export default class PostWish extends Component {
 
             {/* <div className='col-4'> */}
             <div className='d-flex justify-content-center'>
-              <div className='card bg-card my-2'>
+              <div className='card bg-card my-2'   style={{width:'100%'}}>
                 <div className='card-body'>
                   {/* Create the form here */}
                   <form className='form-inline' onSubmit={this.handleSubmit}>
@@ -126,6 +126,7 @@ export default class PostWish extends Component {
                       <center>
                         <input
                           className='form-control ml-1'
+                          style={{marginRight:'3vw', width:'20vw'}}
                           id='username'
                           name='username'
                           placeholder='Infosys Username'
@@ -162,6 +163,7 @@ export default class PostWish extends Component {
                       <center>
                         <textarea
                           className='form-control ml-1'
+                          style={{width:'35vw'}}
                           id='wish'
                           name='wish'
                           placeholder='Drop in your Wish'
@@ -196,6 +198,7 @@ export default class PostWish extends Component {
                   <div
                     name='usernameError'
                     className='ml-4 alignleft text-danger'
+                    style={{textAlign:'left'}}
                   >
                     {this.validator.message(
                       'username',
@@ -210,7 +213,7 @@ export default class PostWish extends Component {
                       'required|numeric|size:6'
                     )}
                   </p> */}
-                  <div name='wishError' className='mr-5 alignright text-danger'>
+                  <div name='wishError' className='mr-5 alignright text-danger' style={{textAlign:'left'}}>
                     {this.validator.message(
                       'wish',
                       this.state.form.wish,
@@ -220,10 +223,7 @@ export default class PostWish extends Component {
                 </div>
               </div>
             </div>
-            {/* </div> */}
-            <div className='col'>
               <ShowWishes allWishes={this.state.allWishes} />
-            </div>
           </div>
         </div>
       </React.Fragment>
