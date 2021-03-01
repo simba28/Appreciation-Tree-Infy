@@ -1,9 +1,9 @@
 .main {
-  background: linear-gradient(
+  background: 
+  /* linear-gradient(
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
-    ),
-    url('./assets/tree.png');
+    ), */ url('./assets/bg.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -45,5 +45,23 @@ img {
   left: 50%;
   color: black;
   transform: translate(-50%, -50%);
-  word-break:normal;
+  word-break: normal;
+}
+
+.alignleft {
+  float: left;
+  /* width: 33.33333%; */
+  width: 50%;
+  text-align: left;
+}
+.aligncenter {
+  float: left;
+  width: 33.33333%;
+  text-align: center;
+}
+.alignright {
+  float: left;
+  /* width: 33.33333%; */
+  width: 50%;
+  text-align: right;
 }
