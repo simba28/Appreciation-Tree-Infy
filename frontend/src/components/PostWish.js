@@ -3,7 +3,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SimpleReactValidator from 'simple-react-validator';
 import ShowWishes from './ShowWishes';
-
+const backend_url = 'http://localhost:5001'
 export default class PostWish extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +38,7 @@ export default class PostWish extends Component {
 
   getAllWishes() {
     axios
-      .get('/posts')
+      .get(backend_url+'/posts')
       .then(response => {
         console.log(response.data);
         this.setState({ allWishes: response.data });
@@ -59,7 +59,7 @@ export default class PostWish extends Component {
     this.setState({ errorMessage: '' });
     console.log(this.state.form);
     axios
-      .post('/posts', this.state.form)
+      .post(backend_url+'/posts', this.state.form)
       .then(response => {
         this.getAllWishes();
       })

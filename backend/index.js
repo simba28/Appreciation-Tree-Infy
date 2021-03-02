@@ -13,12 +13,14 @@ connectDB();
 
 // Init Middleware
 app.use(express.json({ extended: false }));
-
+app.use(express.static('../frontend/build/'))
 app.get('/', (req, res) => res.send('API Running...'));
 
 // Define routes
 app.use('/posts', postsRoute);
-
-const PORT = process.env.PORT || 5000;
+app.get('/*', (req,res) => {
+    res.sendFile('index.html', {root: __dirname + '/../frontend/build/'});
+});
+const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
