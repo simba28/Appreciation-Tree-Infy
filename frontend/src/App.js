@@ -8,7 +8,7 @@ function App() {
     <React.Fragment>
       <div className='sticky-top'>
         <img
-          src='navbar.jpg'
+          src='./assets/navbar.jpg'
           className='sticky'
           style={{ width: '100%', height: '80px' }}
           alt=''
