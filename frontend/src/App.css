@@ -17,7 +17,6 @@ img {
   height: 300px;
 }
 .star-image {
-  /* background-image: require('./assets/tree.png'); */
   position: relative;
   text-align: center;
   display: inline-flex;
@@ -34,7 +33,7 @@ img {
 }
 
 .star-image img {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .centered {
